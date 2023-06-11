@@ -1,0 +1,19 @@
+[
+  {
+    "type": "mutation_category",
+    "id": "ME_NPCS",
+    "name": "超凡者",
+    "wip": true,
+    "threshold_mut": "THRESH_ME_NPCS",
+    "mutagen_message": "你对身体的掌控变得更加清晰。"
+  },
+  {
+    "type": "mutation",
+    "id": "THRESH_ME_NPCS",
+    "name": { "str": "超凡之力" },
+    "points": 1,
+    "description": "你正在尝试驾驭超凡的力量.",
+	"purifiable": false,
+	"valid": false
+  }
+]

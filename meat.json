@@ -1,0 +1,130 @@
+[
+
+  {
+    "id": "mutant_meat_copy",
+    "type": "COMESTIBLE",
+    "copy-from": "mutant_meat",
+    "name": { "str": "变异肉块", "str_pl": "变异肉块" },
+	"extend": { "vitamins": [ [ "wxsk_value_evolution", 15,25 ],[ "wxsk_value_collapse", 24,48 ] ] },
+	"use_action": 
+	[
+			{
+			"type" : "consume_drug",
+			"activation_message" : "你吃下了 %s",
+			"vitamins": [[ "wxsk_value_evolution", 15,25 ],[ "wxsk_value_collapse", 24,48 ] ]
+            }
+    ]
+  },
+  {
+    "id": "mutant_meat",
+    "type": "COMESTIBLE",
+    "copy-from": "mutant_meat_copy",
+	"name": { "str": "chunk of mutant meat", "str_pl": "chunks of mutant meat" }
+  },
+  {
+    "id": "mutant_meat_cooked_copy",
+    "type": "COMESTIBLE",
+    "copy-from": "mutant_meat_cooked",
+    "name": { "str": "变异熟肉", "str_pl": "变异熟肉" },
+    "extend": { "vitamins": [ [ "wxsk_value_evolution", 15,20 ],[ "wxsk_value_collapse", 24,36 ] ] },
+    "use_action": 
+	[
+			{
+			"type" : "consume_drug",
+			"activation_message" : "你吃下了 %s",
+			"vitamins": [[ "wxsk_value_evolution", 15,20 ],[ "wxsk_value_collapse", 24,36 ] ]
+            }
+    ]
+  },
+  {
+    "id": "mutant_meat_cooked",
+    "type": "COMESTIBLE",
+    "copy-from": "mutant_meat_cooked_copy",
+	"name": { "str": "cooked mutant meat", "str_pl": "cooked mutant meat" }
+  },
+  {
+    "id": "mutant_meat_scrap_copy",
+    "type": "COMESTIBLE",
+    "copy-from": "mutant_meat_scrap",
+    "name": { "str": "变异碎肉", "str_pl": "变异碎肉" },
+	"extend": { "vitamins": [ [ "wxsk_value_evolution", 1,5 ],[ "wxsk_value_collapse", 2,5 ] ] },
+	 "use_action": 
+	[
+			{
+			"type" : "consume_drug",
+			"activation_message" : "你吃下了 %s",
+			"vitamins": [ [ "wxsk_value_evolution", 1,5 ],[ "wxsk_value_collapse", 2,5 ] ]
+            }
+    ]
+  },
+  {
+    "id": "mutant_meat_scrap",
+    "type": "COMESTIBLE",
+    "copy-from": "mutant_meat_scrap_copy",
+    "name": { "str": "scrap of mutant meat", "str_pl": "scraps of mutant meat" }
+  },
+  {
+    "id": "mutant_meat_scrap_cooked_copy",
+    "type": "COMESTIBLE",
+    "copy-from": "mutant_meat_scrap_cooked",
+    "name": { "str": "变异熟碎肉", "str_pl": "变异熟碎肉" },
+    "extend": { "vitamins": [ [ "wxsk_value_evolution", 1,4 ],[ "wxsk_value_collapse", 2,4 ] ] },
+	"use_action": 
+	[
+			{
+			"type" : "consume_drug",
+			"activation_message" : "你吃下了 %s",
+			"vitamins": [[ "wxsk_value_evolution", 1,4 ],[ "wxsk_value_collapse", 2,4 ] ]
+            }
+    ]
+  },
+  {
+    "id": "mutant_meat_scrap_cooked",
+    "type": "COMESTIBLE",
+    "copy-from": "mutant_meat_scrap_cooked_copy",
+    "name": { "str": "cooked scrap of mutant meat", "str_pl": "cooked scraps of mutant meat" }
+  },
+  {
+    "id": "mutant_human_flesh_copy",
+    "copy-from": "mutant_human_flesh",
+    "type": "COMESTIBLE",
+    "name": { "str": "变异人肉","str_pl": "mutant humanoid meat" },
+	"extend": { "vitamins": [ [ "wxsk_value_evolution", 15,25 ],[ "wxsk_value_collapse", 24,48 ] ] },
+	"use_action": 
+	[
+			{
+			"type" : "consume_drug",
+			"activation_message" : "你吃下了 %s",
+			"vitamins": [ [ "wxsk_value_evolution", 15,25 ],[ "wxsk_value_collapse", 24,48 ] ]
+            }
+    ]
+  },  
+  {
+    "id": "mutant_human_flesh",
+    "copy-from": "mutant_human_flesh_copy",
+    "type": "COMESTIBLE",
+    "name": { "str": "mutant humanoid meat","str_pl": "mutant humanoid meat" }
+  },
+  {
+    "id": "mutant_human_cooked_copy",
+    "copy-from": "mutant_human_flesh",
+    "type": "COMESTIBLE",
+    "name": { "str": "煮人肉","str_pl": "煮人肉" },
+	"extend": { "vitamins": [ [ "wxsk_value_evolution", 15,20 ],[ "wxsk_value_collapse", 24,36 ] ] },
+	"use_action": 
+	[
+			{
+			"type" : "consume_drug",
+			"activation_message" : "你吃下了 %s",
+			"vitamins": [ [ "wxsk_value_evolution", 15,20 ],[ "wxsk_value_collapse", 24,36 ] ]
+            }
+    ]
+  },
+  {
+    "id": "mutant_human_cooked",
+    "copy-from": "mutant_human_cooked_copy",
+    "type": "COMESTIBLE",
+    "name": { "str": "煮人肉","str_pl": "煮人肉" }
+  }
+
+]

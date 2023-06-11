@@ -1,0 +1,99 @@
+[
+{
+    "type": "effect_type",
+    "id": "effect_vtm_tpsj",
+    "rating": "bad",
+    "vitamins": [
+	  {
+        "vitamin": "wxsk_value_evolution",
+        "rate": [ [ -6000, -6000 ] ],
+        "absorb_mult": [ 1.0 ],
+        "tick": [ "1 s" ]
+      }
+    ]
+},
+{
+    "type": "effect_type",
+    "id": "effect_vtm_tpsb",
+    "name":["突破失败"],
+	"desc": ["突破失败,你感到逐渐变得虚弱！"],
+	"apply_message": "你感觉你的身体隐隐有些不对劲！",
+	"miss_messages": [ [ "你从突破失败中恢复过来！", 1 ] ],
+	"show_intensity": true,
+    "rating": "bad",
+	"//":"具有此效果时，每分钟加10~20点崩溃值,且对使用变异肉的崩溃值吸收x2,resist_为具有抗性的效果",
+    "vitamins": [
+      {
+        "vitamin": "wxsk_value_collapse",
+        "rate": [ [ 0, 6 ] ],
+        "absorb_mult": [ 2.0 ],
+        "tick": [ "1 m" ],
+		"resist_rate": [ [ 0, 2 ] ],
+		"resist_absorb_mult": [ 1.0 ],
+        "resist_tick": [ "2 m" ]
+      },
+	  {
+        "vitamin": "wxsk_value_evolution",
+        "rate": [ [ 0, -10 ] ],
+        "absorb_mult": [ 0.5 ],
+        "tick": [ "1 m" ],
+		"resist_rate": [ [ 0, -2 ] ],
+		"resist_absorb_mult": [ 1.0 ],
+        "resist_tick": [ "2 m" ]
+      }
+    ],
+    "show_in_info": true
+},
+{
+    "type": "effect_type",
+    "id": "effect_vtm_bkz",
+    "name":["身体膨胀","身体崩溃"],
+	"desc": ["你感觉你的身体膨胀的像一个气球！","你感觉你的身体正在由内而外的撕裂！"],
+	"removes_effects": 
+	["flu"],
+	"apply_message": "你感觉你的身体有点不对劲！",
+	"miss_messages": [ [ "你感觉身体正在变好.", 1 ] ],
+	"show_intensity": true,
+    "rating": "bad",
+    "max_intensity": 2,
+    "base_mods": { 
+    "stamina_min" :[-10],
+    "speed_mod":[-20],
+    "pain_min":[ 2 ],
+	"pain_max":[ 10 ],
+    "pain_chance":[ 80 ],
+    "pain_tick": [ 60 ]
+     },
+    "scaling_mods": { 
+    "stamina_min" :[-20],
+    "speed_mod":[-40],
+    "pain_min":[ 10 ],
+	"pain_max":[ 40 ],
+    "pain_chance":[ 90 ]
+     },
+    "show_in_info": true
+},
+{
+    "id": "wxsk_value_evolution",
+    "type": "vitamin",
+    "vit_type": "counter",
+    "name": { "str": "强化值" },
+    "min": 0,
+	"max": 2147483647,
+    "rate": "365 h",
+	"flags": [ "NO_DISPLAY" ]
+},
+{
+    "id": "wxsk_value_collapse",
+    "type": "vitamin",
+    "vit_type": "vitamin",
+    "name": { "str": "崩溃值" },
+    "min": 0,
+	"max": 5000,
+    "rate": "15 m",
+	"flags": [ "NO_DISPLAY" ],
+	"excess": "effect_vtm_bkz",
+	"disease_excess": [ [ 100, 200 ], [ 200, 5000 ] ]
+}
+
+]

@@ -1,0 +1,17 @@
+[
+{
+"type": "MOD_INFO",
+"ident": "Mutant_Evolution",
+"name": "<color_red>变异进化</color>",
+"dependencies": [ "dda" ],
+"version": "4.25",
+"description": "@和NPC食用变异肉可以强化身体,身体强化到达阈值后通过吸收变异晶体来突破当前的属性上限.注意!短时间食用过多的变异肉和晶体将会导致中毒或身体崩坏.",
+"authors": ["青青子衿"],
+"maintainers": ["青青子衿"],
+"category": "misc_additions",
+"path": ""
+}
+]
+
+
+

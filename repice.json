@@ -1,0 +1,47 @@
+[
+{
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "result": "wxsk_me_jhyj1",
+    "category": "CC_CHEM",
+    "subcategory": "CSC_CHEM_MUTAGEN",
+    "skill_used": "chemistry",
+    "skills_required": [ "firstaid", 1 ],
+    "difficulty": 2,
+    "time": "1 h",
+    "batch_time_factors": [ 20, 5 ],
+	"autolearn": true,
+	"qualities": [ { "id": "SEPARATE", "level": 1 } ],
+    "using": [ [ "serum_production_standard", 60 ] ],
+	"tools": [ [ [ "gelbox", -1 ] ] ],
+    "components": 
+	[
+	[ [ "salt_water", 30 ],[ "saline", 30 ] ],
+	[ [ "mutant_meat", 30 ],[ "mutant_human_flesh", 30 ] ] 
+	],
+    "flags": [ "SECRET" ]
+  },
+  {
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "result": "wxsk_me_jhyj2",
+    "category": "CC_CHEM",
+    "subcategory": "CSC_CHEM_MUTAGEN",
+    "skill_used": "chemistry",
+    "skills_required": [ "firstaid", 3 ],
+    "difficulty": 6,
+    "time": "2 h",
+    "batch_time_factors": [ 20, 5 ],
+	"autolearn": true,
+	"qualities": [ { "id": "SEPARATE", "level": 1 },{ "id": "EXTRACT", "level": 1 } ],
+    "using": [ [ "serum_production_standard", 100 ] ],
+	"tools": [ [ [ "gelbox", -1 ] ] ],
+    "components": 
+	[
+	[ [ "salt_water", 100 ],[ "saline", 100 ] ],
+	[ [ "mutant_meat", 60 ],[ "mutant_human_flesh", 60 ] ] 
+	],
+    "flags": [ "SECRET" ]
+  }
+
+]

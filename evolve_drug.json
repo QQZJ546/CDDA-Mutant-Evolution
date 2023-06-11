@@ -1,0 +1,72 @@
+[
+{
+    "type": "effect_on_condition",
+    "id": "wxsk_debug_eoc",
+    "effect": 
+	[
+	 { "u_add_trait": "WXSK_ME_MUTATION_10D" }
+    ]
+},
+{
+    "id": "wxsk_me_byjt",
+    "type": "GENERIC",
+	"looks_like":"art_crystal",
+	"copy-from": "wxsk_me_jhyj1",
+    "name": { "str": "变异晶体","str_pl": "变异晶体" },
+    "description": "从变异生物身上获取的未知晶体,它也许拥有未知的力量.",
+	"phase": "solid",
+    "use_action": 
+	{
+      "type": "effect_on_conditions",
+      "description": "激活使用它可能有特殊的效果.",
+      "effect_on_conditions": [ "EOC_Attribute_Value" ]
+    }
+},
+{
+    "id": "wxsk_me_jhyj1",
+    "copy-from": "mutagen_flavor",
+    "type": "COMESTIBLE",
+    "name": { "str": "进化药剂","str_pl": "进化药剂" },
+    "description": "从变异生物身体中提取特殊物质制作出来的药剂,它相对于直接食用变异肉来说能够更有效和安全的强化身体,但是短时间内大量服用同样会导致身体崩溃.",
+    "use_action": 
+   [
+	 {
+	"type" : "consume_drug",
+	"activation_message" : "你喝下了 %s",
+	"vitamins": [ [ "wxsk_value_evolution", 80,120 ],[ "wxsk_value_collapse", 24,48 ] ]
+     }
+	 
+    ]
+},
+{
+    "id": "wxsk_me_jhyj2",
+    "copy-from": "mutagen_flavor",
+    "type": "COMESTIBLE",
+    "name": { "str": "进化药剂II型","str_pl": "进化药剂II型" },
+    "description": "从变异生物身体中提取特殊物质制作出来的浓缩药剂,它相对于直接食用变异肉来说能够更有效和安全的强化身体,但是短时间内大量服用同样会导致身体崩溃,相对于普通的进化药剂,它的效果更加强大,同时也更加的不稳定.",
+    "use_action": 
+   [
+	 {
+	"type" : "consume_drug",
+	"activation_message" : "你喝下了 %s",
+	"vitamins": [ [ "wxsk_value_evolution", 800,1200 ],[ "wxsk_value_collapse", 72,168 ] ]
+     }
+    ]
+},
+{
+    "id": "wxsk_me_jhyj3",
+    "copy-from": "mutagen_flavor",
+    "type": "COMESTIBLE",
+    "name": { "str": "进化药剂III型","str_pl": "进化药剂III型" },
+    "description": "经过复杂分工艺从变异生物身体中提取特殊物质制作出来的浓缩药剂,它相对于直接食用变异肉来说能够更有效和安全的强化身体,但是短时间内大量服用同样会导致身体崩溃,相对于II型,它的效果异常强大,但也极度的不稳定,冒然服用很有可能有生命危险!!!",
+    "use_action": 
+   [
+	 {
+	"type" : "consume_drug",
+	"activation_message" : "你喝下了 %s",
+	"vitamins": [ [ "wxsk_value_evolution", 2800,3200 ],[ "wxsk_value_collapse", 180,220 ] ]
+     }
+    ]
+}
+
+]
