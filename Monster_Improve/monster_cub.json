@@ -1,0 +1,52 @@
+[
+
+{
+    "id": "mon_bear_cub",
+    "type": "MONSTER",
+    "//": "黑熊幼崽",
+	"copy-from":"mon_bear_cub",
+	"petfood": {
+      "food": [ "DOGFOOD" ],
+      "feed": "The %s seems to like you!  It lets you pat its head and seems friendly.",
+      "pet": "The %s happily wags its tail while you pat their head."
+    },
+	"extend": 
+	{
+    "flags": [ "PET_WONT_FOLLOW","DOGFOOD","CANPLAY" ]
+    }
+},
+{
+    "id": "mon_tiger_cub",
+    "type": "MONSTER",
+    "copy-from":"mon_bear_cub",
+    "looks_like": "mon_cat_chonker_kitten",
+    "name": {"str": "老虎幼崽"},
+    "description": "老虎的幼崽，这个小家伙虽然看上去没啥威胁，但是你需要当心它的父母.",
+    "upgrades": {"age_grow": 240,"into": "mon_tiger_club1"},
+    "special_attacks":[["scratch", 20]],
+	"petfood": {
+    "food": [ "DOGFOOD" ],
+    "feed": "The %s seems to like you!  It lets you pat its head and seems friendly.",
+    "pet": "The %s happily wags its tail while you pat their head."
+    },
+    "extend": 
+	{
+    "flags": [ "PET_WONT_FOLLOW","DOGFOOD","CANPLAY" ]
+    }
+},
+{
+    "id": "mon_boar_wild_piglet",
+    "type": "MONSTER",
+    "//": "小野猪",    
+	"copy-from":"mon_boar_wild_piglet",
+	"petfood": {
+    "food": [ "DOGFOOD" ],
+    "feed": "The %s seems to like you!  It lets you pat its head and seems friendly.",
+    "pet": "The %s happily wags its tail while you pat their head."
+    },
+    "extend": 
+	{
+	"flags": [ "PET_WONT_FOLLOW","DOGFOOD","CANPLAY" ]
+	}
+}
+]

@@ -1,0 +1,172 @@
+[
+{
+    "type": "monster_attack",
+	"attack_type": "melee",
+	"id": "monster_push",
+	"cooldown": 10,
+	"move_cost": 100,
+	"damage_max_instance": [ { "damage_type": "stab", "amount": 30, "armor_penetration": 10, "armor_multiplier": 0.5 } ],
+	"body_parts": [
+	[ "head", 2 ],
+	[ "torso", 2 ],
+	[ "arm_l", 4],
+	[ "arm_r", 4],
+    [ "leg_l", 4 ],
+    [ "leg_r", 4 ]
+	],
+	"effects": [ 
+	{ "id": "infected", "duration": 7200, "chance":5 }
+	],
+	"hit_dmg_u": "%1$s 撕咬着你!",
+    "hit_dmg_npc": "%1$s 扑向 <npcname>,撕咬着 <npcname> !",
+    "no_dmg_msg_u": "%1$s 尝试扑向你，但是被你躲开了.",
+    "no_dmg_msg_npc": "%1$s 尝试扑向 <npcname>, 但是被 <npcname> 躲开了."
+	
+},
+{
+    "id": "mon_crows_m240_copy",
+    "type": "MONSTER",
+	"//": "炮塔",
+	"copy-from":"mon_crows_m240",
+	"hp": 100,
+	"vision_day": 59,
+    "vision_night": 9
+},
+{
+    "id": "mon_crows_m240",
+    "type": "MONSTER",
+	"copy-from":"mon_crows_m240_copy"
+},
+{
+    "id": "mon_turret_bmg_copy",
+    "type": "MONSTER",
+	"//": "重机枪炮塔",
+	"copy-from":"mon_turret_bmg",
+	"hp": 100,
+	"vision_day": 59,
+    "vision_night": 9
+},
+{
+    "id": "mon_turret_bmg",
+    "type": "MONSTER",
+	"copy-from":"mon_turret_bmg_copy"
+},
+{
+    "id": "mon_turret_rifle_copy",
+    "type": "MONSTER",
+	"//": "轻机枪炮塔",
+	"copy-from":"mon_turret_rifle",
+	"hp": 100,
+	"vision_day": 59,
+    "vision_night": 9
+},
+{
+    "id": "mon_turret_rifle",
+    "type": "MONSTER",
+	"copy-from":"mon_turret_rifle_copy"
+},
+  {
+    "id": "mon_horse_copy",
+    "type": "MONSTER",
+	"//": "马",
+	"copy-from":"mon_horse",
+	"mountable_weight_ratio": 0.25
+  },
+  {
+    "id": "mon_horse",
+    "type": "MONSTER",
+	"copy-from":"mon_horse_copy"
+  },
+{
+
+    "id": "mon_bear",
+    "type": "MONSTER",
+	"//": "黑熊",
+	"copy-from":"mon_bear",
+	"extend": 
+	{
+	"special_attacks":[["monster_push", 15]],
+	"anger_triggers": ["PLAYER_CLOSE", "FRIEND_ATTACKED", "FRIEND_DIED"],
+	"flags": [ "PET_WONT_FOLLOW","PET_MOUNTABLE" ]
+	},
+    "reproduction": {
+        "baby_monster": "mon_bear_cub",
+        "baby_count": 1,
+        "baby_timer": 400
+    },
+    "mountable_weight_ratio": 0.20,
+    "volume": "190 L",
+    "weight": "190 kg",
+	"aggression": 0,
+	"morale": 90,
+	"hp": 200,
+	"melee_damage": [ { "damage_type": "cut", "amount": 14 } ],
+	"armor_bash": 15,
+	"armor_stab": 4,
+	"armor_cut": 4,
+	"armor_bullet": 10
+},
+{
+    "id": "mon_tiger_club1",
+    "type": "MONSTER",
+	"name": {"str": "幼虎"},
+	"copy-from":"mon_tiger",
+	"looks_like": "mon_tiger",
+    "extend": 
+	{
+	"special_attacks":[["monster_push", 20]],
+	"anger_triggers": ["PLAYER_CLOSE", "FRIEND_ATTACKED", "FRIEND_DIED"],
+	"flags": [ "PET_WONT_FOLLOW" ]
+	},
+	"description": "正在成长期的小老虎，通常跟随在父母身边，你需要当心它的父母同时也需要小心初露峥嵘的它.",
+	"upgrades": {"age_grow": 360,"into": "mon_tiger"},
+	"volume": "80 L",
+    "weight": "80 kg",
+	"hp": 100,  
+	"speed": 130,  
+	"morale": 90,
+	"melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
+	"armor_bash": 5,
+	"armor_stab": 2,
+	"armor_cut": 2,
+	"armor_bullet": 2
+},
+{
+    "id": "mon_tiger",
+    "type": "MONSTER",
+	"//": "老虎",
+	"copy-from":"mon_tiger",
+    "extend": 
+	{
+	"special_attacks":[["monster_push", 10]],   
+	"anger_triggers": ["PLAYER_CLOSE", "FRIEND_ATTACKED", "FRIEND_DIED"],
+	"flags": [ "PET_WONT_FOLLOW","PET_MOUNTABLE" ]
+	},
+    "reproduction": {
+        "baby_monster": "mon_tiger_cub",
+        "baby_count": 1,
+        "baby_timer": 400
+    },
+    "mountable_weight_ratio": 0.20,
+	"volume": "200 L",
+    "weight": "200 kg",    
+    "speed": 180,  
+	"morale": 90,
+	"melee_damage": [ { "damage_type": "cut", "amount": 19 } ],
+	"armor_bash": 10,
+	"armor_stab": 4,
+	"armor_cut": 2,
+	"armor_bullet": 8
+},
+{
+    "id": "mon_boar_wild",
+    "type": "MONSTER",
+	"//": "野猪",    
+	"copy-from":"mon_boar_wild",
+	"hp": 120,
+	"armor_bash": 10,
+	"armor_stab": 5,
+	"armor_cut": 4,
+	"armor_bullet": 12
+}
+]

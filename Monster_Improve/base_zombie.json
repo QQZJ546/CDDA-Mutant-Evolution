@@ -1,0 +1,138 @@
+[
+{
+    "type": "monster_attack",
+	"attack_type": "melee",
+	"id": "zombie_rush",
+	"cooldown": 10,
+	"move_cost": 100,
+	"damage_max_instance": [ { "damage_type": "stab", "amount": 5, "armor_penetration": 10, "armor_multiplier": 0.9 } ],
+	"body_parts": [[ "head", 4 ],[ "torso", 3]],
+	"effects": [ 
+	{ "id": "grabbed", "duration": 5, "bp": "torso","chance":60 },
+	{ "id": "infected", "duration": 7200, "chance":5 },
+	{ "id": "grabbed", "duration": 5, "bp": "arm_l","chance":40 },
+	{ "id": "grabbed", "duration": 5, "bp": "arm_r","chance":40 },
+	{ "id": "grabbed", "duration": 5, "bp": "head","chance":20 },
+	{ "id": "downed", "duration": 2 }
+	],
+	"hit_dmg_u": "%1$s 扑向了你，把你扑倒了，撕咬着你的身体!",
+    "hit_dmg_npc": "%1$s 扑向了 <npcname>,撕咬着 <npcname> 的身体!",
+    "no_dmg_msg_u": "%1$s 尝试扑向你，但是被你躲开了.",
+    "no_dmg_msg_npc": "%1$s 尝试扑向 <npcname>, 但是被 <npcname> 躲开了."
+	
+},
+{
+    "type": "monster_attack",
+	"attack_type": "melee",
+	"id": "zombie_slimed",
+	"cooldown": 20,
+	"move_cost": 100,
+	"damage_max_instance": [ { "damage_type": "bash", "amount": 5, "armor_penetration": 10, "armor_multiplier": 0.9 } ],
+	"body_parts": [
+      [ "foot_l", 2 ],
+      [ "foot_r", 2 ],
+      [ "leg_l", 3 ],
+      [ "leg_r", 3 ],
+      [ "hand_l", 2 ],
+      [ "hand_r", 2 ],
+      [ "head", 3 ],
+      [ "eyes", 2 ],
+      [ "mouth", 1 ],
+      [ "arm_l", 3 ],
+      [ "arm_r", 3 ],
+      [ "torso", 4 ]
+    ],
+	"effects": [ 
+	{ "id": "nausea", "duration": 60, "chance":90 },
+	{ "id": "slimed", "duration": 300 }
+	],
+	"hit_dmg_u": "%1$s 向你喷射出一团散发出恶臭的脓液!",
+    "hit_dmg_npc": "%1$s 向 <npcname> 喷射出一团散发出恶臭的脓液!",
+    "no_dmg_msg_u": "%1$s 向你喷射出一团散发出恶臭的脓液，但是被你躲开了.",
+    "no_dmg_msg_npc": "%1$s 尝试向 <npcname> 喷射出一团散发出恶臭的脓液, 但是被 <npcname> 躲开了."
+	
+},
+  {
+    "id": "mon_zombie_copy",
+    "type": "MONSTER",
+	"//": "丧尸",
+	"copy-from":"mon_zombie",
+	"special_attacks": [ { "type": "bite", "cooldown": 5 }, [ "zombie_rush", 9 ], [ "scratch", 20 ] ]
+  },
+  {
+    "id": "mon_zombie_tough_copy",
+    "type": "MONSTER",
+	"//": "健壮丧尸",
+	"copy-from":"mon_zombie_tough",
+	"special_attacks": [ { "type": "bite", "cooldown": 5, "min_mul": 0.7 }, [ "zombie_rush", 9 ], [ "scratch", 20 ] ]
+  },
+  {
+    "id": "mon_zombie_runner_copy",
+    "type": "MONSTER",
+	"//": "追猎者丧尸",
+	"copy-from":"mon_zombie_runner",
+	"special_attacks": [
+      [ "scratch", 15 ],
+	  [ "zombie_rush", 9 ],
+      {
+        "type": "bite",
+        "cooldown": 5,
+        "damage_max_instance": [ { "damage_type": "stab", "amount": 10, "armor_multiplier": 0.7 } ]
+      }
+    ]
+  },
+  {
+    "id": "mon_zombie_dog_copy",
+    "type": "MONSTER",
+	"//": "丧尸犬",
+	"copy-from":"mon_zombie_dog",
+	"special_attacks": [ { "type": "bite", "cooldown": 3 },[ "zombie_rush", 9 ] ]
+  },
+  {
+    "id": "mon_zombie_rot_copy",
+    "type": "MONSTER",
+	"//": "腐朽丧尸",
+	"copy-from":"mon_zombie_rot",
+	"special_attacks": [ { "type": "bite", "cooldown": 5 }, [ "zombie_rush", 9 ], [ "scratch", 20 ] ]
+  },
+  {
+    "id": "mon_zombie_fat_copy",
+    "type": "MONSTER",
+	"//": "肥胖丧尸",
+	"copy-from":"mon_zombie_fat",
+	"special_attacks": [ 
+	[ "zombie_slimed",15],
+	[ "zombie_rush", 10 ],
+	{ "type": "bite", "cooldown": 5, "min_mul": 0.75, "//": "Fat zombies have stronger jaws" } ]
+  },
+  {
+    "id": "mon_zombie",
+    "type": "MONSTER",
+	"copy-from":"mon_zombie_copy"
+  },
+  {
+    "id": "mon_zombie_tough",
+    "type": "MONSTER",
+	"copy-from":"mon_zombie_tough_copy"
+  },
+  {
+    "id": "mon_zombie_runner",
+    "type": "MONSTER",
+	"copy-from":"mon_zombie_runner_copy"
+  },
+  {
+    "id": "mon_zombie_dog",
+    "type": "MONSTER",
+	"copy-from":"mon_zombie_dog_copy"
+  },
+  {
+    "id": "mon_zombie_rot",
+    "type": "MONSTER",
+	"copy-from":"mon_zombie_rot_copy"
+  },
+  {
+    "id": "mon_zombie_fat",
+    "type": "MONSTER",
+	"copy-from":"mon_zombie_fat_copy"
+  }
+]
