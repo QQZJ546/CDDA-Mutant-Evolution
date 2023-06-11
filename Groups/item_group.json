@@ -1,0 +1,49 @@
+[
+    {
+    "type": "item_group",
+    "id": "mutagens",
+	"copy-from":"mutagens",
+    "extend":{"items": [[ "wxsk_me_jhyj1", 20 ],[ "wxsk_me_jhyj2", 10 ],[ "wxsk_me_jhyj3", 1 ],[ "wxsk_me_byjt", 20 ]]}
+    },
+    {
+    "type": "item_group",
+    "subtype": "collection",
+	"//":"研究员Z",
+    "id": "mon_zombie_scientist_death_drops",
+	"copy-from":"mon_zombie_scientist_death_drops",
+	"extend":{"items": [[ "wxsk_me_jhyj1", 50 ],[ "wxsk_me_jhyj2", 10],[ "wxsk_me_jhyj3", 1],[ "wxsk_me_byjt", 20 ]]}
+   },
+   {
+    "type": "item_group",
+    "subtype": "collection",
+    "//":"幸存者Z",
+    "id": "mon_zombie_survivor_death_drops",
+	"copy-from":"mon_zombie_survivor_death_drops",
+	"extend":{"items": [[ "wxsk_me_jhyj1", 10 ],[ "wxsk_me_byjt", 20 ]]}
+   },
+   {
+    "type": "item_group",
+    "subtype": "collection",
+    "//":"资深幸存者Z",
+    "id": "mon_zombie_survivor_elite_death_drops",
+	"copy-from":"mon_zombie_survivor_elite_death_drops",
+	"extend":{"items": [[ "wxsk_me_jhyj1", 30 ],[ "wxsk_me_jhyj2", 5],[ "wxsk_me_byjt", 60 ]]}
+   },
+   {
+    "type": "item_group",
+    "subtype": "collection",
+    "//":"士兵Z",
+    "id": "mon_zombie_soldier_death_drops",
+	"copy-from":"mon_zombie_soldier_death_drops",
+	"extend":{"items": [[ "wxsk_me_jhyj1", 20 ],[ "wxsk_me_byjt", 20 ]]}
+   },
+   {
+    "type": "item_group",
+    "subtype": "collection",
+    "//":"生化士兵Z",
+    "id": "mon_zombie_bio_op_death_drops",
+	"copy-from":"mon_zombie_bio_op_death_drops",
+	"extend":{"items": [[ "wxsk_me_jhyj1", 40 ],[ "wxsk_me_jhyj2", 10],[ "wxsk_me_jhyj3", 1],[ "wxsk_me_byjt", 40 ]]}
+   }
+
+]
