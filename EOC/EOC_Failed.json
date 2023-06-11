@@ -1,0 +1,223 @@
+[
+{
+    "type": "effect_type",
+	"//":"表示@已步入超凡",
+    "id": "U_ME_Start"
+},
+{
+    "type": "effect_type",
+	"//":"表示进化为力量系",
+    "id": "U_ME_Improve12_S"
+},
+{
+    "type": "effect_type",
+	"//":"表示进化为敏捷系",
+    "id": "U_ME_Improve12_D"
+},
+{
+    "type": "effect_type",
+	"//":"表示进化为魔法系",
+    "id": "U_ME_Improve12_Magic"
+},
+{
+    "type": "effect_type",
+    "id": "effect_U_ME_buff",
+	"//":"模拟掉落无伤",
+	"blocks_effects": ["cold", "flu"],
+    "flags": [ "FEATHER_FALL" ]
+},
+{
+    "type": "effect_type",
+	"//":"用于超凡阶段的临时值,每次突破成功时添加这个值，突破失败后移除这个值",
+    "id": "U_ME_Interim2"
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_Attribute_Get_Value",
+	"//": "每次执行此函数时,获得一个0~3之间的随机数",
+    "effect": { "arithmetic": [{ "u_val": "var", "var_name": "判断值", "type": "int", "context": "0~3" }, "=", { "rand": 3 } ]}
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_Attribute_Get_Value99",
+	"//": "每次执行此函数时,获得一个0~99之间的随机数",
+    "effect": { "arithmetic": [{ "u_val": "var", "var_name": "百分比", "type": "int", "context": "0~99" }, "=", { "rand": 99 } ]}
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_Failed2",
+	"condition":
+	{
+	 "and":
+	 [
+	 {"compare_int": [ { "u_val": "vitamin","name": "wxsk_value_evolution" }, ">=", { "const": 6000 } ]},
+	 { "or": [ { "u_has_strength": 12 }, { "u_has_dexterity": 12 },{ "u_has_intelligence": 12 }, { "u_has_perception": 12 } ] },
+	 {"not": { "u_has_effect": "U_ME_Start" } },
+	 {"not": {"u_has_effect": "U_ME_Interim2"}}
+	 ]
+	},
+    "effect": 
+	[
+	{ "u_message": "突破失败!", "type": "bad" },
+	{ "u_add_effect":"effect_vtm_tpsb", "duration": "1 h" }
+	]
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_Failed3",
+	"//": "控制每一级突破的成功率",
+    "effect": 
+	{
+     "run_eocs": 
+	  [
+	   "EOC_Attribute_Get_Value99",
+       {
+        "id": "EOC_ME_GA99_2",
+        "condition": 
+		{
+		"and":
+		 [ 
+		  {"compare_int": [ { "u_val": "var", "var_name": "百分比", "type": "int", "context": "0~99" }, "<", { "const": 20 } ]},
+		  { "or": [ { "u_has_trait":"WXSK_ME_MUTATION_1S" },{ "u_has_trait":"WXSK_ME_MUTATION_1D" },{ "u_has_trait":"WXSK_ME_MUTATION_1M" } ] }
+		 ]
+		},
+        "effect": [{ "u_message": "突破失败!", "type": "bad" },{ "u_add_effect":"effect_vtm_tpsb", "duration": "1 h" }]
+       },
+	   {
+        "id": "EOC_ME_GA99_3",
+        "condition": 
+		{
+		"and":
+		 [ 
+		  {"compare_int": [ { "u_val": "var", "var_name": "百分比", "type": "int", "context": "0~99" }, "<", { "const": 30 } ]},
+		  { "or": [ { "u_has_trait":"WXSK_ME_MUTATION_2S" },{ "u_has_trait":"WXSK_ME_MUTATION_2D" },{ "u_has_trait":"WXSK_ME_MUTATION_2M" } ] }
+		 ]
+		},
+        "effect": [{ "u_message": "突破失败!", "type": "bad" },{ "u_add_effect":"effect_vtm_tpsb", "duration": "1 h" }]
+       },
+	   {
+        "id": "EOC_ME_GA99_4",
+        "condition": 
+		{
+		"and":
+		 [ 
+		  {"compare_int": [ { "u_val": "var", "var_name": "百分比", "type": "int", "context": "0~99" }, "<", { "const": 50 } ]},
+		  { "or": [ { "u_has_trait":"WXSK_ME_MUTATION_3S" },{ "u_has_trait":"WXSK_ME_MUTATION_3D" },{ "u_has_trait":"WXSK_ME_MUTATION_3M" } ] }
+		 ]
+		},
+        "effect": [{ "u_message": "突破失败!", "type": "bad" },{ "u_add_effect":"effect_vtm_tpsb", "duration": "1 h" }]
+       },
+	   {
+        "id": "EOC_ME_GA99_5",
+        "condition": 
+		{
+		"and":
+		 [ 
+		  {"compare_int": [ { "u_val": "var", "var_name": "百分比", "type": "int", "context": "0~99" }, "<", { "const": 55 } ]},
+		  { "or": [ { "u_has_trait":"WXSK_ME_MUTATION_4S" },{ "u_has_trait":"WXSK_ME_MUTATION_4D" },{ "u_has_trait":"WXSK_ME_MUTATION_4M" } ] }
+		 ]
+		},
+        "effect": [{ "u_message": "突破失败!", "type": "bad" },{ "u_add_effect":"effect_vtm_tpsb", "duration": "1 h" }]
+       },
+	   {
+        "id": "EOC_ME_GA99_6",
+        "condition": 
+		{
+		"and":
+		 [ 
+		  {"compare_int": [ { "u_val": "var", "var_name": "百分比", "type": "int", "context": "0~99" }, "<", { "const": 60 } ]},
+		  { "or": [ { "u_has_trait":"WXSK_ME_MUTATION_5S" },{ "u_has_trait":"WXSK_ME_MUTATION_5D" },{ "u_has_trait":"WXSK_ME_MUTATION_5M" } ] }
+		 ]
+		},
+        "effect": [{ "u_message": "突破失败!", "type": "bad" },{ "u_add_effect":"effect_vtm_tpsb", "duration": "1 h" }]
+       },
+	   {
+        "id": "EOC_ME_GA99_7",
+        "condition": 
+		{
+		"and":
+		 [ 
+		  {"compare_int": [ { "u_val": "var", "var_name": "百分比", "type": "int", "context": "0~99" }, "<", { "const": 80 } ]},
+		  { "or": [ { "u_has_trait":"WXSK_ME_MUTATION_6S" },{ "u_has_trait":"WXSK_ME_MUTATION_6D" },{ "u_has_trait":"WXSK_ME_MUTATION_6M" } ] }
+		 ]
+		},
+        "effect": [{ "u_message": "突破失败!", "type": "bad" },{ "u_add_effect":"effect_vtm_tpsb", "duration": "1 h" }]
+       },
+	   {
+        "id": "EOC_ME_GA99_8",
+        "condition": 
+		{
+		"and":
+		 [ 
+		  {"compare_int": [ { "u_val": "var", "var_name": "百分比", "type": "int", "context": "0~99" }, "<", { "const": 90 } ]},
+		  { "or": [ { "u_has_trait":"WXSK_ME_MUTATION_7S" },{ "u_has_trait":"WXSK_ME_MUTATION_7D" },{ "u_has_trait":"WXSK_ME_MUTATION_7M" } ] }
+		 ]
+		},
+        "effect": [{ "u_message": "突破失败!", "type": "bad" },{ "u_add_effect":"effect_vtm_tpsb", "duration": "1 h" }]
+       },
+	   {
+        "id": "EOC_ME_GA99_9",
+        "condition": 
+		{
+		"and":
+		 [ 
+		  {"compare_int": [ { "u_val": "var", "var_name": "百分比", "type": "int", "context": "0~99" }, "<", { "const": 95 } ]},
+		  { "or": [ { "u_has_trait":"WXSK_ME_MUTATION_8S" },{ "u_has_trait":"WXSK_ME_MUTATION_8D" },{ "u_has_trait":"WXSK_ME_MUTATION_8M" } ] }
+		 ]
+		},
+        "effect": [{ "u_message": "突破失败!", "type": "bad" },{ "u_add_effect":"effect_vtm_tpsb", "duration": "1 h" }]
+       },
+	   {
+        "id": "EOC_ME_GA99_0",
+        "condition": 
+		{
+		"and":
+		 [ 
+		  {"compare_int": [ { "u_val": "var", "var_name": "百分比", "type": "int", "context": "0~99" }, "<", { "const": 99 } ]},
+		  { "or": [ { "u_has_trait":"WXSK_ME_MUTATION_9S" },{ "u_has_trait":"WXSK_ME_MUTATION_9D" },{ "u_has_trait":"WXSK_ME_MUTATION_9M" } ] }
+		 ]
+		},
+        "effect": [{ "u_message": "突破失败!", "type": "bad" },{ "u_add_effect":"effect_vtm_tpsb", "duration": "1 h" }]
+       }
+      ]
+    }
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_CF_MainF1",
+	"condition": 
+	{
+	"and":
+		[
+          {"compare_int": [ { "u_val": "vitamin","name": "wxsk_value_evolution" }, "<", { "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" } ]},
+		  {"not": {"u_has_effect": "U_ME_Interim2"}},
+		  {"u_has_effect": "U_ME_Start" } 
+	    ]
+	},
+    "effect": 
+	[
+	{ "arithmetic": [ { "u_val": "var", "var_name": "临时的值", "type": "int", "context": "配合判断值" },"=",{ "u_val": "vitamin","name": "wxsk_value_evolution" } ] },
+	{
+        "set_string_var": { "u_val": "临时的值", "type": "int", "context": "配合判断值", "default": 0 },
+        "target_var": { "u_val": "临时的值" }
+    },
+	{ "u_message": "身体强化度[<u_val:临时的值>]不足,无法突破!", "type": "bad" }
+	]
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_CF_MainF2",
+	"condition": 
+	{
+	"and":
+		[
+          {"compare_int": [ { "u_val": "vitamin","name": "wxsk_value_evolution" }, ">=", { "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" } ]},
+		  { "or": [ {"u_has_effect": "effect_vtm_tpsb"},{"compare_int": [ { "u_val": "focus" }, "<", { "const": 100 } ]},{"compare_int": [ { "u_val": "pain" }, ">", { "const": 0 } ]}]},
+		  {"not": { "u_has_effect": "U_ME_Interim2"}},
+		  { "u_has_effect": "U_ME_Start" } 
+	    ]
+	},
+    "effect": { "u_message": "精神无法集中,无法突破!", "type": "bad" }
+}
+
+]

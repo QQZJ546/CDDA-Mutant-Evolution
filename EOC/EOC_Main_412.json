@@ -1,0 +1,150 @@
+[
+
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_AVdebug",
+	"//": "当强化值>=100且任意属性>4且<12时,触发突破属性判断",
+	"recurrence": 60,
+	"condition": 
+	{
+	"and":
+		[
+          {"compare_int": [ { "u_val": "vitamin","name": "wxsk_value_evolution" }, ">=", { "const": 100 } ]},
+		  { "or": [ { "u_has_strength": 4 }, { "u_has_dexterity": 4 },{ "u_has_intelligence": 4 }, { "u_has_perception": 4 } ] },
+		  { "not": { "or":[{ "u_has_strength": 12 }, { "u_has_dexterity": 12 },{ "u_has_intelligence": 12 }, { "u_has_perception": 12 }] } }
+	    ]
+	},
+     "effect": 
+	[
+      {"run_eocs":
+	  [
+	    "EOC_Attribute_Get_Value",
+        "EOC_ME_AV04",
+		"EOC_ME_AV05",
+		"EOC_ME_AV06",
+		"EOC_ME_AV07",
+		"EOC_ME_AV08",
+		"EOC_ME_AV09",
+		"EOC_ME_AV10",
+		"EOC_ME_AV11"
+      ]
+	  }
+    ],
+	"false_effect": []
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_AV04",
+	"//": "当强化值>=100且任意属性>4且<5时，随机一维+1.",
+	"condition": 
+	{
+	"and":
+		[
+          {"compare_int": [ { "u_val": "vitamin","name": "wxsk_value_evolution" }, ">=", { "const": 100 } ]},
+		  { "or": [ { "u_has_strength": 4 }, { "u_has_dexterity": 4 },{ "u_has_intelligence": 4 }, { "u_has_perception": 4 } ] },
+		  { "not": { "or":[{ "u_has_strength": 5 }, { "u_has_dexterity": 5 },{ "u_has_intelligence": 5 }, { "u_has_perception": 5 }] } }
+	    ]
+	},
+    "effect": [ { "run_eocs": ["EOC_ME_Add_Attribute"] },{ "u_add_effect":"effect_vtm_tpsj", "duration": "1 s" } ]
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_AV05",
+	"condition": 
+	{
+	"and":
+		[
+          {"compare_int": [ { "u_val": "vitamin","name": "wxsk_value_evolution" }, ">=", { "const": 200 } ]},
+		  { "or": [ { "u_has_strength": 5 }, { "u_has_dexterity": 5 },{ "u_has_intelligence": 5 }, { "u_has_perception": 5 } ] },
+		  { "not": { "or":[{ "u_has_strength": 6 }, { "u_has_dexterity": 6 },{ "u_has_intelligence": 6 }, { "u_has_perception": 6 }] } }
+	    ]
+	},
+    "effect": [ { "run_eocs": ["EOC_ME_Add_Attribute"] },{ "u_add_effect":"effect_vtm_tpsj", "duration": "1 s" } ]
+	
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_AV06",
+	"condition": 
+	{
+	"and":
+		[
+          {"compare_int": [ { "u_val": "vitamin","name": "wxsk_value_evolution" }, ">=", { "const": 400 } ]},
+		  { "or": [ { "u_has_strength": 6 }, { "u_has_dexterity": 6 },{ "u_has_intelligence": 6 }, { "u_has_perception": 6 } ] },
+		  { "not": { "or":[{ "u_has_strength": 7 }, { "u_has_dexterity": 7 },{ "u_has_intelligence": 7 }, { "u_has_perception": 7 }] } }
+	    ]
+	},
+    "effect": [ { "run_eocs": ["EOC_ME_Add_Attribute"] },{ "u_add_effect":"effect_vtm_tpsj", "duration": "1 s" } ]
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_AV07",
+	"condition": 
+	{
+	"and":
+		[
+          {"compare_int": [ { "u_val": "vitamin","name": "wxsk_value_evolution" }, ">=", { "const": 600 } ]},
+		  { "or": [ { "u_has_strength": 7 }, { "u_has_dexterity": 7 },{ "u_has_intelligence": 7 }, { "u_has_perception": 7 } ] },
+		  { "not": { "or":[{ "u_has_strength": 8 }, { "u_has_dexterity": 8 },{ "u_has_intelligence": 8 }, { "u_has_perception": 8 }] } }
+	    ]
+	},
+    "effect": [ { "run_eocs": ["EOC_ME_Add_Attribute"] },{ "u_add_effect":"effect_vtm_tpsj", "duration": "1 s" } ]
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_AV08",
+	"condition": 
+	{
+	"and":
+		[
+          {"compare_int": [ { "u_val": "vitamin","name": "wxsk_value_evolution" }, ">=", { "const": 1000 } ]},
+		  { "or": [ { "u_has_strength": 8 }, { "u_has_dexterity": 8 },{ "u_has_intelligence": 8 }, { "u_has_perception": 8 } ] },
+		  { "not": { "or":[{ "u_has_strength": 9 }, { "u_has_dexterity": 9 },{ "u_has_intelligence": 9 }, { "u_has_perception": 9 }] } }
+	    ]
+	},
+    "effect": [ { "run_eocs": ["EOC_ME_Add_Attribute"] },{ "u_add_effect":"effect_vtm_tpsj", "duration": "1 s" } ]
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_AV09",
+	"condition": 
+	{
+	"and":
+		[
+          {"compare_int": [ { "u_val": "vitamin","name": "wxsk_value_evolution" }, ">=", { "const": 1400 } ]},
+		  { "or": [ { "u_has_strength": 9 }, { "u_has_dexterity": 9 },{ "u_has_intelligence": 9 }, { "u_has_perception": 9 } ] },
+		  { "not": { "or":[{ "u_has_strength": 10 }, { "u_has_dexterity": 10 },{ "u_has_intelligence": 10 }, { "u_has_perception": 10 }] } }
+	    ]
+	},
+    "effect": [ { "run_eocs": ["EOC_ME_Add_Attribute"] },{ "u_add_effect":"effect_vtm_tpsj", "duration": "1 s" } ]
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_AV10",
+	"condition": 
+	{
+	"and":
+		[
+          {"compare_int": [ { "u_val": "vitamin","name": "wxsk_value_evolution" }, ">=", { "const": 2200 } ]},
+		  { "or": [ { "u_has_strength": 10 }, { "u_has_dexterity": 10 },{ "u_has_intelligence": 10 }, { "u_has_perception": 10 } ] },
+		  { "not": { "or":[{ "u_has_strength": 11 }, { "u_has_dexterity": 11 },{ "u_has_intelligence": 11 }, { "u_has_perception": 11 }] } }
+	    ]
+	},
+    "effect": [ { "run_eocs": ["EOC_ME_Add_Attribute"] },{ "u_add_effect":"effect_vtm_tpsj", "duration": "1 s" } ]
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_AV11",
+	"condition": 
+	{
+	"and":
+		[
+          {"compare_int": [ { "u_val": "vitamin","name": "wxsk_value_evolution" }, ">=", { "const": 3000 } ]},
+		  { "or": [ { "u_has_strength": 11 }, { "u_has_dexterity": 11 },{ "u_has_intelligence": 11 }, { "u_has_perception": 11 } ] },
+		  { "not": { "or":[{ "u_has_strength": 12 }, { "u_has_dexterity": 12 },{ "u_has_intelligence": 12 }, { "u_has_perception": 12 }] } }
+	    ]
+	},
+    "effect": [ { "run_eocs": ["EOC_ME_Add_Attribute"] },{ "u_add_effect":"effect_vtm_tpsj", "duration": "1 s" } ]
+}
+
+]

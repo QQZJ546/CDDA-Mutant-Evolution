@@ -1,0 +1,382 @@
+[
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_Improve12_Magic",
+	"//": "随机判断值=2且智力感知>12时获得魔法系进化方向",
+	"condition": 
+	{
+	"and":
+		[
+		  {"u_has_var": "判断值", "type": "int", "context": "0~3", "value": "2" },
+		  {"u_has_intelligence": 12 },{ "u_has_perception": 12 },
+		  {"not": { "u_has_effect": "U_ME_Start" } }
+	    ]
+	},
+    "effect": 
+	 [
+	  { "u_add_trait":"WXSK_ME_MUTATION_1M" },
+	  { "u_add_effect":"U_ME_Improve12_Magic", "duration":"PERMANENT" },
+	  { "u_add_effect":"U_ME_Interim2", "duration":"PERMANENT" },
+	  { "u_message": "你的精神得到了强化!", "type": "good" },
+	  { "u_add_effect":"U_ME_Start", "duration":"PERMANENT" },
+	  { "run_eocs": ["EOC_ME_Add_12Attribute"] }
+	 ]
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_Improve12_S",
+	"//": "随机判断值=0且力量>12时获得力量系进化方向",
+	"condition": 
+	{
+	"and":
+		[
+		  {"u_has_var": "判断值", "type": "int", "context": "0~3", "value": "0" },
+		  {"u_has_strength": 12 },
+		  {"not": { "u_has_effect": "U_ME_Start" } }
+	    ]
+	},
+    "effect": 
+	 [
+	  { "u_add_trait":"WXSK_ME_MUTATION_1S" },
+	  { "u_add_effect":"U_ME_Improve12_S", "duration":"PERMANENT" },
+	  { "u_add_effect":"U_ME_Interim2", "duration":"PERMANENT" },
+	  { "u_message": "你的力量得到了强化!", "type": "good" },
+	  { "u_add_effect":"U_ME_Start", "duration":"PERMANENT" },
+	  { "run_eocs": ["EOC_ME_Add_12Attribute"] }
+	 ]
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_Improve12_D",
+	"//": "随机判断值=1且敏捷>12时获得敏捷系进化方向",
+	"condition": 
+	{
+	"and":
+		[
+		  {"u_has_var": "判断值", "type": "int", "context": "0~3", "value": "1" },
+		  {"u_has_dexterity": 12 },
+		  {"not": { "u_has_effect": "U_ME_Start" } }
+	    ]
+	},
+    "effect": 
+	 [
+	  { "u_add_trait":"WXSK_ME_MUTATION_1D" },
+	  { "u_add_effect":"U_ME_Improve12_D", "duration":"PERMANENT" },
+	  { "u_add_effect":"U_ME_Interim2", "duration":"PERMANENT" },
+	  { "u_message": "你的敏捷得到了强化!", "type": "good" },
+	  { "u_add_effect":"U_ME_Start", "duration":"PERMANENT" },
+	  { "run_eocs": ["EOC_ME_Add_12Attribute"] }
+	 ]
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_Strength_Value",
+    "effect": 
+	[ 
+		{ "u_message": "你感觉身体变得更加强壮,你的力量+1.", "type": "good" },
+		{ "arithmetic": [{ "u_val": "strength_base" }, "=", { "u_val": "strength_base" }, "+", { "const": 1 }]}
+	]
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_Dexterity_Value",
+    "effect": 
+	[ 
+		{ "u_message": "你感觉身体变得更加灵活,你的敏捷+1.", "type": "good" },
+		{ "arithmetic": [{ "u_val": "dexterity_base" }, "=", { "u_val": "dexterity_base" }, "+", { "const": 1 }]}
+	]
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_Intelligence_Value",
+    "effect": 
+	[ 
+		{ "u_message": "你感觉大脑变得更加高效,你的智力+1.", "type": "good" },
+		{ "arithmetic": [{ "u_val": "intelligence_base" }, "=", { "u_val": "intelligence_base" }, "+", { "const": 1 }]}
+	]
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_Perception_Value",
+    "effect": 
+	[ 
+		{ "u_message": "你的感觉变得更加清晰,你的感知+1.", "type": "good" },
+		{ "arithmetic": [{ "u_val": "perception_base" }, "=", { "u_val": "perception_base" }, "+", { "const": 1 }]}
+	]
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_Add_Attribute",
+	"//": "随机给一项属性值+1",
+    "effect": 
+	{
+     "run_eocs": 
+	  [
+       {
+        "id": "EOC_ME_AV01_1",
+        "condition": {"and":[{"u_has_var": "判断值", "type": "int", "context": "0~3", "value": "0" }]},
+        "effect": { "run_eocs": ["EOC_Strength_Value"] }
+       },
+	   {
+        "id": "EOC_ME_AV01_2",
+        "condition": {"and":[{"u_has_var": "判断值", "type": "int", "context": "0~3", "value": "1" }]},
+        "effect": { "run_eocs": ["EOC_Dexterity_Value"] }
+       },
+	   {
+        "id": "EOC_ME_AV01_3",
+        "condition": {"and":[{"u_has_var": "判断值", "type": "int", "context": "0~3", "value": "2" }]},
+        "effect": { "run_eocs": ["EOC_Intelligence_Value"] }
+       },
+	   {
+        "id": "EOC_ME_AV01_4",
+        "condition": {"and":[{"u_has_var": "判断值", "type": "int", "context": "0~3", "value": "3" }]},
+        "effect": { "run_eocs": ["EOC_Perception_Value"] }
+       }
+      ]
+    }
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_Add_12Attribute",
+	"//": "主属性+1,其它三维随机+1",
+    "effect": 
+	{
+     "run_eocs": 
+	  [
+       {
+        "id": "EOC_ME_Add_Strength",
+        "condition": {"or":[{ "u_has_effect": "U_ME_Improve12_S" },{ "u_has_trait":"WXSK_ME_MUTATION_10S" }]},
+        "effect": { "run_eocs": ["EOC_Strength_Value"] }
+       },
+	   {
+        "id": "EOC_ME_Add_Dexterity",
+		"condition": {"or":[{ "u_has_effect": "U_ME_Improve12_D" },{ "u_has_trait":"WXSK_ME_MUTATION_10D" }]},
+        "effect": { "run_eocs": ["EOC_Dexterity_Value"] }
+       },
+	   {
+        "id": "EOC_ME_Add_Intelligence",
+		"condition": {"or":[{ "u_has_effect": "U_ME_Improve12_Magic" },{ "u_has_trait":"WXSK_ME_MUTATION_10M" }]},
+        "effect": { "run_eocs": ["EOC_Intelligence_Value"] }
+       },
+	   "EOC_Attribute_Get_Value",
+	   "EOC_ME_Add_Another"
+      ]
+    }
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_Add_Another",
+	"//": "除主属性外其它三维随机+1",
+    "effect": 
+	{
+     "run_eocs": 
+	  [
+       {
+        "id": "EOC_ME_Aother_1",
+        "condition": {"and":[{"u_has_var": "判断值", "type": "int", "context": "0~3", "value": "0" },{"not": { "u_has_effect": "U_ME_Improve12_S" }}]},
+        "effect": { "run_eocs": ["EOC_Strength_Value"] }
+       },
+	   {
+        "id": "EOC_ME_Aother_2",
+        "condition": {"and":[{"u_has_var": "判断值", "type": "int", "context": "0~3", "value": "1" },{"not": { "u_has_effect": "U_ME_Improve12_D" }}]},
+        "effect": { "run_eocs": ["EOC_Dexterity_Value"] }
+       },
+	   {
+        "id": "EOC_ME_Aother_3",
+        "condition": {"and":[{"u_has_var": "判断值", "type": "int", "context": "0~3", "value": "2" },{"not": { "u_has_effect": "U_ME_Improve12_Magic" }}]},
+        "effect": { "run_eocs": ["EOC_Intelligence_Value"] }
+       },
+	   {
+        "id": "EOC_ME_Aother_4",
+        "condition": {"and":[{"u_has_var": "判断值", "type": "int", "context": "0~3", "value": "3" }]},
+        "effect": { "run_eocs": ["EOC_Perception_Value"] }
+       }
+      ]
+    }
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_Arithmetic_QHZ",
+	"//":"每次进阶所需强化值x+x*2/5=(1.4x)",
+    "effect": 
+	[ 
+    { "arithmetic": [ { "u_val": "var", "var_name": "临时的值", "type": "int", "context": "配合判断值" },"=",{ "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" } ] },
+    { "arithmetic": [ { "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" },"=",{ "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" },"*",{ "const": 2 } ] },
+	{ "arithmetic": [ { "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" },"=",{ "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" },"/",{ "const": 5 } ] },
+	{ "arithmetic": [ { "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" },"=",{ "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" },"+",{ "u_val": "var", "var_name": "临时的值", "type": "int", "context": "配合判断值" } ] }
+	]	
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_CF_MainS",
+	"//": "力量系进阶函数",
+	"condition": { "and":[{"u_has_effect": "U_ME_Improve12_S"},{"not": {"u_has_effect": "effect_vtm_tpsb"}}] },
+    "effect": 
+	{
+     "run_eocs": 
+	  [
+       {
+        "id": "EOC_ME_CFS0",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_9S" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_9S" },{ "u_add_trait":"WXSK_ME_MUTATION_10S" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFS9",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_8S" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_8S" },{ "u_add_trait":"WXSK_ME_MUTATION_9S" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+	   {
+        "id": "EOC_ME_CFS8",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_7S" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_7S" },{ "u_add_trait":"WXSK_ME_MUTATION_8S" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFS7",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_6S" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_6S" },{ "u_add_trait":"WXSK_ME_MUTATION_7S" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFS6",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_5S" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_5S" },{ "u_add_trait":"WXSK_ME_MUTATION_6S" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFS5",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_4S" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_4S" },{ "u_add_trait":"WXSK_ME_MUTATION_5S" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFS4",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_3S" },
+        "effect": [ { "u_add_effect":"effect_U_ME_buff", "duration":"PERMANENT" },{ "u_lose_trait":"WXSK_ME_MUTATION_3S" },{ "u_add_trait":"WXSK_ME_MUTATION_4S" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFS3",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_2S" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_2S" },{ "u_add_trait":"WXSK_ME_MUTATION_3S" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFS2",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_1S" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_1S" },{ "u_add_trait":"WXSK_ME_MUTATION_2S" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       }
+       ]
+    }
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_CF_MainD",
+	"//": "敏捷系进阶函数",
+	"condition": { "and":[{"u_has_effect": "U_ME_Improve12_D"},{"not": {"u_has_effect": "effect_vtm_tpsb"}}] },
+    "effect": 
+	{
+     "run_eocs": 
+	  [
+       {
+        "id": "EOC_ME_CFD0",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_9D" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_9D" },{ "u_add_trait":"WXSK_ME_MUTATION_10D" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFD9",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_8D" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_8D" },{ "u_add_trait":"WXSK_ME_MUTATION_9D" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+	   {
+        "id": "EOC_ME_CFD8",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_7D" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_7D" },{ "u_add_trait":"WXSK_ME_MUTATION_8D" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFD7",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_6D" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_6D" },{ "u_add_trait":"WXSK_ME_MUTATION_7D" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFD6",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_5D" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_5D" },{ "u_add_trait":"WXSK_ME_MUTATION_6D" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFD5",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_4D" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_4D" },{ "u_add_trait":"WXSK_ME_MUTATION_5D" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFD4",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_3D" },
+        "effect": [ { "u_add_effect":"effect_U_ME_buff", "duration":"PERMANENT" },{ "u_lose_trait":"WXSK_ME_MUTATION_3D" },{ "u_add_trait":"WXSK_ME_MUTATION_4D" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFD3",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_2D" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_2D" },{ "u_add_trait":"WXSK_ME_MUTATION_3D" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFD2",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_1D" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_1D" },{ "u_add_trait":"WXSK_ME_MUTATION_2D" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       }
+       ]
+    }
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_CF_MainM",
+	"//": "魔法系进阶函数",
+	"condition": { "and":[{"u_has_effect": "U_ME_Improve12_M"},{"not": {"u_has_effect": "effect_vtm_tpsb"}}] },
+    "effect": 
+	{
+     "run_eocs": 
+	  [
+       {
+        "id": "EOC_ME_CFM0",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_9M" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_9M" },{ "u_add_trait":"WXSK_ME_MUTATION_10M" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFM9",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_8M" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_8M" },{ "u_add_trait":"WXSK_ME_MUTATION_9M" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+	   {
+        "id": "EOC_ME_CFM8",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_7M" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_7M" },{ "u_add_trait":"WXSK_ME_MUTATION_8M" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFM7",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_6M" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_6M" },{ "u_add_trait":"WXSK_ME_MUTATION_7M" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFM6",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_5M" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_5M" },{ "u_add_trait":"WXSK_ME_MUTATION_6M" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFM5",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_4M" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_4M" },{ "u_add_trait":"WXSK_ME_MUTATION_5M" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFM4",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_3M" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_3M" },{ "u_add_trait":"WXSK_ME_MUTATION_4M" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFM3",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_2M" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_2M" },{ "u_add_trait":"WXSK_ME_MUTATION_3M" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       },
+       {
+        "id": "EOC_ME_CFM2",
+        "condition": { "u_has_trait":"WXSK_ME_MUTATION_1M" },
+        "effect": [ { "u_lose_trait":"WXSK_ME_MUTATION_1M" },{ "u_add_trait":"WXSK_ME_MUTATION_2M" },{"run_eocs":["EOC_ME_Arithmetic_QHZ","EOC_ME_Add_12Attribute"]} ]
+       }
+       ]
+    }
+}
+
+
+]

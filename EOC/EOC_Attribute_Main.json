@@ -1,0 +1,82 @@
+[
+{
+    "type": "effect_on_condition",
+    "id": "EOC_Attribute_Value",
+	"//": "判断是否满足属性突破条件的主函数",
+    "effect": 
+	[
+	  { "u_lose_effect":"U_ME_Interim2" },
+      {"run_eocs":
+	  [
+	    "EOC_Attribute_Get_Value",
+		"EOC_ME_Improve12",
+		"EOC_ME_Failed2",
+		"EOC_ME_CF_MainF1",
+		"EOC_ME_CF_MainF2",
+		"EOC_ME_CF_Main"
+      ]
+	  }
+    ]
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_Improve12",
+	"//":"判断当属性>12时发生进化",
+	"condition": 
+	{
+	"and":
+		[
+          {"compare_int": [ { "u_val": "vitamin","name": "wxsk_value_evolution" }, ">=", { "const": 6000 } ]},
+		  {"compare_int": [ { "u_val": "focus" }, ">=", { "const": 95 } ]},
+		  {"compare_int": [ { "u_val": "pain" }, "=", { "const": 0 } ]},
+		  { "or": [ { "u_has_strength": 12 }, { "u_has_dexterity": 12 },{ "u_has_intelligence": 12 }, { "u_has_perception": 12 } ] },
+		  {"not": { "u_has_effect": "U_ME_Start" } }
+	    ]
+	},
+    "effect": 
+	[ 
+	{ "arithmetic": [ { "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" },"=",{ "const": 6000 } ] },
+    { "arithmetic": [ { "u_val": "var", "var_name": "临时的值", "type": "int", "context": "配合判断值" },"=",{ "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" } ] },
+    { "arithmetic": [ { "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" },"=",{ "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" },"*",{ "const": 2 } ] },
+	{ "arithmetic": [ { "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" },"=",{ "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" },"/",{ "const": 5 } ] },
+	{ "arithmetic": [ { "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" },"=",{ "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" },"+",{ "u_val": "var", "var_name": "临时的值", "type": "int", "context": "配合判断值" } ] },
+	{"run_eocs": ["EOC_ME_Improve12_Magic","EOC_ME_Improve12_S","EOC_ME_Improve12_D"] }
+	]		
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_CF_Main",
+	"condition": 
+	{
+	"and":
+		[
+          {"compare_int": [ { "u_val": "vitamin","name": "wxsk_value_evolution" }, ">=", { "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" } ]},
+		  {"compare_int": [ { "u_val": "focus" }, ">=", { "const": 95 } ]},
+		  {"compare_int": [ { "u_val": "pain" }, "=", { "const": 0 } ]},
+		  { "or": [ { "u_has_strength": 12 }, { "u_has_dexterity": 12 },{ "u_has_intelligence": 12 }, { "u_has_perception": 12 } ] },
+		  { "u_has_effect": "U_ME_Start" } 
+	    ]
+	},
+    "effect": [ {"run_eocs": ["EOC_ME_Failed3","EOC_ME_CF_MainS","EOC_ME_CF_MainD","EOC_ME_CF_MainM"] }]	
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_CFZ_Unlimited",
+	"//": "当强化值>=1.4倍的上次强化值且满足下述条件时,触发突破属性判断",
+	"recurrence": 3600,
+	"condition": 
+	{
+	"and":
+		[
+          {"compare_int": [ { "u_val": "vitamin","name": "wxsk_value_evolution" }, ">=", { "u_val": "var", "var_name": "强化基值", "type": "int", "context": "判断强化值" } ]},
+		  { "or": [ { "u_has_trait":"WXSK_ME_MUTATION_10S" }, { "u_has_trait":"WXSK_ME_MUTATION_10D" },{ "u_has_trait":"WXSK_ME_MUTATION_10M" } ] },
+		  {"compare_int": [ { "u_val": "focus" }, ">=", { "const": 95 } ]},
+		  {"compare_int": [ { "u_val": "pain" }, "=", { "const": 0 } ]},
+		  { "u_has_effect": "U_ME_Start" }
+	    ]
+	},
+    "effect": [{"run_eocs":["EOC_Attribute_Get_Value","EOC_ME_Add_12Attribute","EOC_ME_Arithmetic_QHZ"]}],
+	"false_effect": []
+}
+
+]

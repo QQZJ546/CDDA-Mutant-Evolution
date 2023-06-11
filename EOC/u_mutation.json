@@ -1,0 +1,385 @@
+[
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_1S",
+    "name": { "str": "超凡一阶[力]" },
+    "points": 1,
+	"purifiable": false,
+	"valid": false,
+    "description": "身体获得了强化，正在趋向于超凡.",
+	"category": ["THRESH_ME_NPCS"],
+	"enchantments": [ "WXSK_ME_Enchantment_1S" ],
+	"changes_to": [ "WXSK_ME_MUTATION_2S" ],
+    "types": [ "SKIN" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_2S",
+    "name": { "str": "超凡二阶[力]" },
+	"copy-from":"WXSK_ME_MUTATION_1S",
+	"prereqs": [ "WXSK_ME_MUTATION_1S" ],
+	"enchantments": [ "WXSK_ME_Enchantment_2S" ],
+	"changes_to": [ "WXSK_ME_MUTATION_3S" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_3S",
+    "name": { "str": "超凡三阶[力]" },
+	"copy-from":"WXSK_ME_MUTATION_1S",
+	"prereqs": [ "WXSK_ME_MUTATION_2S" ],
+    "enchantments": [ "WXSK_ME_Enchantment_3S" ],
+	"changes_to": [ "WXSK_ME_MUTATION_4S" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_4S",
+    "name": { "str": "超凡四阶[力]" },
+	"copy-from":"WXSK_ME_MUTATION_1S",
+	"prereqs": [ "WXSK_ME_MUTATION_3S" ],
+    "enchantments": [ "WXSK_ME_Enchantment_4S" ],
+	"changes_to": [ "WXSK_ME_MUTATION_5S" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_5S",
+    "name": { "str": "超凡五阶[力]" },
+	"copy-from":"WXSK_ME_MUTATION_1S",
+	"prereqs": [ "WXSK_ME_MUTATION_4S" ],
+    "enchantments": [ "WXSK_ME_Enchantment_5S" ],
+	"changes_to": [ "WXSK_ME_MUTATION_6S" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_6S",
+    "name": { "str": "超凡六阶[力]" },
+	"copy-from":"WXSK_ME_MUTATION_1S",
+	"prereqs": [ "WXSK_ME_MUTATION_5S" ],
+    "enchantments": [ "WXSK_ME_Enchantment_6S" ],
+	"changes_to": [ "WXSK_ME_MUTATION_7S" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_7S",
+    "name": { "str": "超凡七阶[力]" },
+	"copy-from":"WXSK_ME_MUTATION_1S",
+	"prereqs": [ "WXSK_ME_MUTATION_6S" ],
+    "enchantments": [ "WXSK_ME_Enchantment_7S" ],
+	"changes_to": [ "WXSK_ME_MUTATION_8S" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_8S",
+    "name": { "str": "超凡八阶[力]" },
+	"copy-from":"WXSK_ME_MUTATION_1S",
+	"prereqs": [ "WXSK_ME_MUTATION_7S" ],
+    "enchantments": [ "WXSK_ME_Enchantment_8S" ],
+	"changes_to": [ "WXSK_ME_MUTATION_9S" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_9S",
+    "name": { "str": "超凡九阶[力]" },
+	"copy-from":"WXSK_ME_MUTATION_1S",
+	"prereqs": [ "WXSK_ME_MUTATION_8S" ],
+    "enchantments": [ "WXSK_ME_Enchantment_9S" ],
+	"changes_to": [ "WXSK_ME_MUTATION_10S" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_10S",
+    "name": { "str": "超凡者[力]" },
+	"description": "你的身体因为不断的强化而变得非同凡响.",
+	"copy-from":"WXSK_ME_MUTATION_1S",
+	"prereqs": [ "WXSK_ME_MUTATION_9S" ],
+    "enchantments": [ "WXSK_ME_Enchantment_10S" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_1D",
+    "name": { "str": "超凡一阶[敏]" },
+    "points": 1,
+	"purifiable": false,
+	"valid": false,
+    "description": "身体获得了强化，正在趋向于超凡.",
+	"encumbrance_always": 
+	[ 
+	[ "head", -1 ],
+	[ "eyes", -1 ],
+	[ "mouth", -1 ],
+	[ "torso", -4 ], 
+	[ "arm_l", -2 ], [ "arm_r", -2 ], 
+	[ "leg_l", -2 ], [ "leg_r", -2 ],
+	[ "foot_l",-2 ], ["foot_r", -2 ]
+	],
+	"category": ["THRESH_ME_NPCS"],
+	"enchantments": [ "WXSK_ME_Enchantment_1D" ],
+	"changes_to": [ "WXSK_ME_MUTATION_2D" ],
+    "types": [ "SKIN" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_2D",
+    "name": { "str": "超凡二阶[敏]" },
+	"copy-from":"WXSK_ME_MUTATION_1D",
+	"encumbrance_always": 
+	[ 
+	[ "head", -2 ],
+	[ "eyes", -2 ],
+	[ "mouth", -2 ],
+	[ "torso", -5 ], 
+	[ "arm_l", -2 ], [ "arm_r", -2 ], 
+	[ "leg_l", -2 ], [ "leg_r", -2 ],
+	[ "foot_l",-2 ], ["foot_r", -2 ]
+	],
+	"prereqs": [ "WXSK_ME_MUTATION_1D" ],
+	"enchantments": [ "WXSK_ME_Enchantment_2D" ],
+	"changes_to": [ "WXSK_ME_MUTATION_3D" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_3D",
+    "name": { "str": "超凡三阶[敏]" },
+	"copy-from":"WXSK_ME_MUTATION_1D",
+	"encumbrance_always": 
+	[ 
+	[ "head", -2 ],
+	[ "eyes", -2 ],
+	[ "mouth", -2 ],
+	[ "torso", -5 ], 
+	[ "arm_l", -3 ], [ "arm_r", -3 ], 
+	[ "leg_l", -3 ], [ "leg_r", -3 ],
+	[ "foot_l",-3 ], ["foot_r", -3 ]
+	],
+	"prereqs": [ "WXSK_ME_MUTATION_2D" ],
+    "enchantments": [ "WXSK_ME_Enchantment_3D" ],
+	"changes_to": [ "WXSK_ME_MUTATION_4D" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_4D",
+    "name": { "str": "超凡四阶[敏]" },
+	"copy-from":"WXSK_ME_MUTATION_1D",
+	"encumbrance_always": 
+	[ 
+	[ "head", -3 ],
+	[ "eyes", -3 ],
+	[ "mouth", -3 ],
+	[ "torso", -6 ], 
+	[ "arm_l", -4 ], [ "arm_r", -4 ], 
+	[ "leg_l", -4 ], [ "leg_r", -4 ],
+	[ "foot_l",-4 ], ["foot_r", -4 ]
+	],
+	"prereqs": [ "WXSK_ME_MUTATION_3D" ],
+    "enchantments": [ "WXSK_ME_Enchantment_4D" ],
+	"changes_to": [ "WXSK_ME_MUTATION_5D" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_5D",
+    "name": { "str": "超凡五阶[敏]" },
+	"copy-from":"WXSK_ME_MUTATION_1D",
+	"encumbrance_always": 
+	[ 
+	[ "head", -4 ],
+	[ "eyes", -4 ],
+	[ "mouth", -4 ],
+	[ "torso", -7 ], 
+	[ "arm_l", -4 ], [ "arm_r", -4 ], 
+	[ "leg_l", -4 ], [ "leg_r", -4 ],
+	[ "foot_l",-4 ], ["foot_r", -4 ]
+	],
+	"prereqs": [ "WXSK_ME_MUTATION_4D" ],
+    "enchantments": [ "WXSK_ME_Enchantment_5D" ],
+	"changes_to": [ "WXSK_ME_MUTATION_6D" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_6D",
+    "name": { "str": "超凡六阶[敏]" },
+	"copy-from":"WXSK_ME_MUTATION_1D",
+	"encumbrance_always": 
+	[ 
+	[ "head", -4 ],
+	[ "eyes", -4 ],
+	[ "mouth", -4 ],
+	[ "torso", -8 ], 
+	[ "arm_l", -4 ], [ "arm_r", -4 ], 
+	[ "leg_l", -4 ], [ "leg_r", -4 ],
+	[ "foot_l",-4 ], ["foot_r", -4 ]
+	],
+	"prereqs": [ "WXSK_ME_MUTATION_5D" ],
+    "enchantments": [ "WXSK_ME_Enchantment_6D" ],
+	"changes_to": [ "WXSK_ME_MUTATION_7D" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_7D",
+    "name": { "str": "超凡七阶[敏]" },
+	"copy-from":"WXSK_ME_MUTATION_1D",
+	"encumbrance_always": 
+	[ 
+	[ "head", -5 ],
+	[ "eyes", -5 ],
+	[ "mouth", -5 ],
+	[ "torso", -10 ], 
+	[ "arm_l", -5 ], [ "arm_r", -5 ], 
+	[ "leg_l", -5 ], [ "leg_r", -5 ],
+	[ "foot_l",-5 ], ["foot_r", -5 ]
+	],
+	"prereqs": [ "WXSK_ME_MUTATION_6D" ],
+    "enchantments": [ "WXSK_ME_Enchantment_7D" ],
+	"changes_to": [ "WXSK_ME_MUTATION_8D" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_8D",
+    "name": { "str": "超凡八阶[敏]" },
+	"copy-from":"WXSK_ME_MUTATION_1D",
+	"encumbrance_always": 
+	[ 
+	[ "head", -6 ],
+	[ "eyes", -6 ],
+	[ "mouth", -6 ],
+	[ "torso", -12 ], 
+	[ "arm_l", -6 ], [ "arm_r", -6 ], 
+	[ "leg_l", -6 ], [ "leg_r", -6 ],
+	[ "foot_l",-6 ], ["foot_r", -6 ]
+	],
+	"prereqs": [ "WXSK_ME_MUTATION_7D" ],
+    "enchantments": [ "WXSK_ME_Enchantment_8D" ],
+	"changes_to": [ "WXSK_ME_MUTATION_9D" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_9D",
+    "name": { "str": "超凡九阶[敏]" },
+	"copy-from":"WXSK_ME_MUTATION_1D",
+	"encumbrance_always": 
+	[ 
+	[ "head", -8 ],
+	[ "eyes", -8 ],
+	[ "mouth", -8 ],
+	[ "torso", -15 ], 
+	[ "arm_l", -8 ], [ "arm_r", -8 ], 
+	[ "leg_l", -8 ], [ "leg_r", -8 ],
+	[ "foot_l",-8 ], ["foot_r", -8 ]
+	],
+	"prereqs": [ "WXSK_ME_MUTATION_8D" ],
+    "enchantments": [ "WXSK_ME_Enchantment_9D" ],
+	"changes_to": [ "WXSK_ME_MUTATION_10D" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_10D",
+    "name": { "str": "超凡者[敏]" },
+	"description": "你的身体因为不断的强化而变得非同凡响.",
+	"encumbrance_always": 
+	[ 
+	[ "head", -10 ],
+	[ "eyes", -10 ],
+	[ "mouth", -10 ],
+	[ "torso", -20 ], 
+	[ "arm_l", -10 ], [ "arm_r", -10 ], 
+	[ "leg_l", -10 ], [ "leg_r", -10 ],
+	[ "foot_l",-10 ], ["foot_r", -10 ]
+	],
+	"copy-from":"WXSK_ME_MUTATION_1D",
+	"prereqs": [ "WXSK_ME_MUTATION_9D" ],
+    "enchantments": [ "WXSK_ME_Enchantment_10D" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_1M",
+    "name": { "str": "超凡一阶[精神]" },
+    "points": 1,
+	"purifiable": false,
+	"valid": false,
+    "description": "身体获得了强化，正在趋向于超凡.",
+	"category": ["THRESH_ME_NPCS"],
+	"enchantments": [ "WXSK_ME_Enchantment_1M" ],
+	"changes_to": [ "WXSK_ME_MUTATION_2M" ],
+    "types": [ "SKIN" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_2M",
+    "name": { "str": "超凡二阶[精神]" },
+	"copy-from":"WXSK_ME_MUTATION_1M",
+	"prereqs": [ "WXSK_ME_MUTATION_1M" ],
+	"enchantments": [ "WXSK_ME_Enchantment_2M" ],
+	"changes_to": [ "WXSK_ME_MUTATION_3M" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_3M",
+    "name": { "str": "超凡三阶[精神]" },
+	"copy-from":"WXSK_ME_MUTATION_1M",
+	"prereqs": [ "WXSK_ME_MUTATION_2M" ],
+    "enchantments": [ "WXSK_ME_Enchantment_3M" ],
+	"changes_to": [ "WXSK_ME_MUTATION_4M" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_4M",
+    "name": { "str": "超凡四阶[精神]" },
+	"copy-from":"WXSK_ME_MUTATION_1M",
+	"prereqs": [ "WXSK_ME_MUTATION_3M" ],
+    "enchantments": [ "WXSK_ME_Enchantment_4M" ],
+	"changes_to": [ "WXSK_ME_MUTATION_5M" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_5M",
+    "name": { "str": "超凡五阶[精神]" },
+	"copy-from":"WXSK_ME_MUTATION_1M",
+	"prereqs": [ "WXSK_ME_MUTATION_4M" ],
+    "enchantments": [ "WXSK_ME_Enchantment_5M" ],
+	"changes_to": [ "WXSK_ME_MUTATION_6M" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_6M",
+    "name": { "str": "超凡六阶[精神]" },
+	"copy-from":"WXSK_ME_MUTATION_1M",
+	"prereqs": [ "WXSK_ME_MUTATION_5M" ],
+    "enchantments": [ "WXSK_ME_Enchantment_6M" ],
+	"changes_to": [ "WXSK_ME_MUTATION_7M" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_7M",
+    "name": { "str": "超凡七阶[精神]" },
+	"copy-from":"WXSK_ME_MUTATION_1M",
+	"prereqs": [ "WXSK_ME_MUTATION_6M" ],
+    "enchantments": [ "WXSK_ME_Enchantment_7M" ],
+	"changes_to": [ "WXSK_ME_MUTATION_8M" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_8M",
+    "name": { "str": "超凡八阶[精神]" },
+	"copy-from":"WXSK_ME_MUTATION_1M",
+	"prereqs": [ "WXSK_ME_MUTATION_7M" ],
+    "enchantments": [ "WXSK_ME_Enchantment_8M" ],
+	"changes_to": [ "WXSK_ME_MUTATION_9M" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_9M",
+    "name": { "str": "超凡九阶[精神]" },
+	"copy-from":"WXSK_ME_MUTATION_1M",
+	"prereqs": [ "WXSK_ME_MUTATION_8M" ],
+    "enchantments": [ "WXSK_ME_Enchantment_9M" ],
+	"changes_to": [ "WXSK_ME_MUTATION_10M" ]
+},
+{
+    "type": "mutation",
+    "id": "WXSK_ME_MUTATION_10M",
+    "name": { "str": "超凡者[精神]" },
+	"description": "你的身体因为不断的强化而变得非同凡响.",
+	"copy-from":"WXSK_ME_MUTATION_1M",
+	"prereqs": [ "WXSK_ME_MUTATION_9M" ],
+    "enchantments": [ "WXSK_ME_Enchantment_10M" ]
+}
+
+]

@@ -1,0 +1,237 @@
+[
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_1S",
+    "values": 
+	[ 
+	{ "value": "MAX_HP", "multiply": 0.10 },{ "value": "REGEN_HP", "multiply": 0.10 },{ "value": "REGEN_STAMINA", "multiply": 0.10 },
+	{ "value": "ARMOR_BASH", "add": 1 },{ "value": "ARMOR_CUT", "add": 1 },{ "value": "ARMOR_STAB", "add": 1 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_2S",
+    "values": 
+	[ 
+	{ "value": "MAX_HP", "multiply": 0.05 },{ "value": "REGEN_HP", "multiply": 0.05 },{ "value": "REGEN_STAMINA", "multiply": 0.05 },
+	{ "value": "ARMOR_BASH", "add": 1 },{ "value": "ARMOR_CUT", "add": 1 },{ "value": "ARMOR_STAB", "add": 1 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_3S",
+    "values": 
+	[ 
+	{ "value": "MAX_HP", "multiply": 0.05 },{ "value": "REGEN_HP", "multiply": 0.05 },{ "value": "REGEN_STAMINA", "multiply": 0.05 },
+	{ "value": "ARMOR_BASH", "add": 1 },{ "value": "ARMOR_CUT", "add": 1 },{ "value": "ARMOR_STAB", "add": 1 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_4S",
+    "values": 
+	[ 
+	{ "value": "MAX_HP", "multiply": 0.10 },{ "value": "REGEN_HP", "multiply": 0.10 },{ "value": "REGEN_STAMINA", "multiply": 0.10 },
+	{ "value": "ARMOR_BASH", "add": 2 },{ "value": "ARMOR_CUT", "add": 2 },{ "value": "ARMOR_STAB", "add": 2 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_5S",
+    "values": 
+	[ 
+	{ "value": "MAX_HP", "multiply": 0.05 },{ "value": "REGEN_HP", "multiply": 0.05 },{ "value": "REGEN_STAMINA", "multiply": 0.05 },
+	{ "value": "ARMOR_BASH", "add": 1 },{ "value": "ARMOR_CUT", "add": 1 },{ "value": "ARMOR_STAB", "add": 1 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_6S",
+    "values": 
+	[ 
+	{ "value": "MAX_HP", "multiply": 0.05 },{ "value": "REGEN_HP", "multiply": 0.05 },{ "value": "REGEN_STAMINA", "multiply": 0.05 },
+	{ "value": "ARMOR_BASH", "add": 1 },{ "value": "ARMOR_CUT", "add": 1 },{ "value": "ARMOR_STAB", "add": 1 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_7S",
+    "values": 
+	[ 
+	{ "value": "MAX_HP", "multiply": 0.10 },{ "value": "REGEN_HP", "multiply": 0.10 },{ "value": "REGEN_STAMINA", "multiply": 0.10 },
+	{ "value": "ARMOR_BASH", "add": 3 },{ "value": "ARMOR_CUT", "add": 3 },{ "value": "ARMOR_STAB", "add": 3 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_8S",
+    "values": 
+	[ 
+	{ "value": "MAX_HP", "multiply": 0.05 },{ "value": "REGEN_HP", "multiply": 0.05 },{ "value": "REGEN_STAMINA", "multiply": 0.05 },
+	{ "value": "ARMOR_BASH", "add": 1 },{ "value": "ARMOR_CUT", "add": 1 },{ "value": "ARMOR_STAB", "add": 1 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_9S",
+    "values": 
+	[ 
+	{ "value": "MAX_HP", "multiply": 0.05 },{ "value": "REGEN_HP", "multiply": 0.05 },{ "value": "REGEN_STAMINA", "multiply": 0.05 },
+	{ "value": "ARMOR_BASH", "add": 1 },{ "value": "ARMOR_CUT", "add": 1 },{ "value": "ARMOR_STAB", "add": 1 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_10S",
+    "values": 
+	[ 
+	{ "value": "MAX_HP", "multiply": 0.15 },{ "value": "REGEN_HP", "multiply": 0.15 },{ "value": "REGEN_STAMINA", "multiply": 0.15 },
+	{ "value": "ARMOR_BASH", "add": 4 },{ "value": "ARMOR_CUT", "add": 4 },{ "value": "ARMOR_STAB", "add": 4 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_1D",
+    "values": 
+	[ 
+	{ "value": "SPEED", "multiply": 0.10 },{ "value": "REGEN_STAMINA", "multiply": 0.10 },
+	{ "value": "BONUS_DODGE", "add": 1 },{ "value": "BONUS_BLOCK", "add": 1 },
+	{ "value": "ATTACK_NOISE", "multiply": 0.10 },{ "value": "SHOUT_NOISE", "multiply": 0.10 },{ "value": "FOOTSTEP_NOISE", "multiply": 0.10 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_2D",
+    "values": 
+	[ 
+	{ "value": "SPEED", "multiply": 0.05 },{ "value": "REGEN_STAMINA", "multiply": 0.05 },
+	{ "value": "ATTACK_NOISE", "multiply": 0.05 },{ "value": "SHOUT_NOISE", "multiply": 0.05 },{ "value": "FOOTSTEP_NOISE", "multiply": 0.05 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_3D",
+    "values": 
+	[ 
+	{ "value": "SPEED", "multiply": 0.05 },{ "value": "REGEN_STAMINA", "multiply": 0.05 },
+	{ "value": "ATTACK_NOISE", "multiply": 0.05 },{ "value": "SHOUT_NOISE", "multiply": 0.05 },{ "value": "FOOTSTEP_NOISE", "multiply": 0.05 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_4D",
+   "values": 
+	[ 
+	{ "value": "SPEED", "multiply": 0.10 },{ "value": "REGEN_STAMINA", "multiply": 0.10 },
+	{ "value": "BONUS_DODGE", "add": 1 },
+	{ "value": "ATTACK_NOISE", "multiply": 0.10 },{ "value": "SHOUT_NOISE", "multiply": 0.10 },{ "value": "FOOTSTEP_NOISE", "multiply": 0.10 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_5D",
+    "values": 
+	[ 
+	{ "value": "SPEED", "multiply": 0.05 },{ "value": "REGEN_STAMINA", "multiply": 0.05 },
+	{ "value": "ATTACK_NOISE", "multiply": 0.05 },{ "value": "SHOUT_NOISE", "multiply": 0.05 },{ "value": "FOOTSTEP_NOISE", "multiply": 0.05 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_6D",
+    "values": 
+	[ 
+	{ "value": "SPEED", "multiply": 0.05 },{ "value": "REGEN_STAMINA", "multiply": 0.05 },
+	{ "value": "ATTACK_NOISE", "multiply": 0.05 },{ "value": "SHOUT_NOISE", "multiply": 0.05 },{ "value": "FOOTSTEP_NOISE", "multiply": 0.05 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_7D",
+    "values": 
+	[ 
+	{ "value": "SPEED", "multiply": 0.10 },{ "value": "REGEN_STAMINA", "multiply": 0.10 },
+	{ "value": "BONUS_BLOCK", "add": 1 },
+	{ "value": "ATTACK_NOISE", "multiply": 0.10 },{ "value": "SHOUT_NOISE", "multiply": 0.10 },{ "value": "FOOTSTEP_NOISE", "multiply": 0.10 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_8D",
+    "values": 
+	[ 
+	{ "value": "SPEED", "multiply": 0.05 },{ "value": "REGEN_STAMINA", "multiply": 0.05 },
+	{ "value": "ATTACK_NOISE", "multiply": 0.05 },{ "value": "SHOUT_NOISE", "multiply": 0.05 },{ "value": "FOOTSTEP_NOISE", "multiply": 0.05 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_9D",
+    "values": 
+	[ 
+	{ "value": "SPEED", "multiply": 0.05 },{ "value": "REGEN_STAMINA", "multiply": 0.05 },
+	{ "value": "ATTACK_NOISE", "multiply": 0.05 },{ "value": "SHOUT_NOISE", "multiply": 0.05 },{ "value": "FOOTSTEP_NOISE", "multiply": 0.05 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_10D",
+    "values": 
+	[ 
+	{ "value": "SPEED", "multiply": 0.15 },{ "value": "REGEN_STAMINA", "multiply": 0.15 },
+	{ "value": "BONUS_DODGE", "add": 1 },{ "value": "BONUS_BLOCK", "add": 1 },
+	{ "value": "ATTACK_NOISE", "multiply": 0.15 },{ "value": "SHOUT_NOISE", "multiply": 0.15 },{ "value": "FOOTSTEP_NOISE", "multiply": 0.15 }
+	]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_1M",
+    "values": [ { "value": "MAX_MANA", "multiply": 0.15 },{ "value": "REGEN_MANA", "multiply": 0.15 } ]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_2M",
+    "values": [ { "value": "MAX_MANA", "multiply": 0.10 },{ "value": "REGEN_MANA", "multiply": 0.10 } ]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_3M",
+    "values": [ { "value": "MAX_MANA", "multiply": 0.10 },{ "value": "REGEN_MANA", "multiply": 0.10 } ]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_4M",
+    "values": [ { "value": "MAX_MANA", "multiply": 0.15 },{ "value": "REGEN_MANA", "multiply": 0.15 } ]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_5M",
+    "values": [ { "value": "MAX_MANA", "multiply": 0.10 },{ "value": "REGEN_MANA", "multiply": 0.10 } ]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_6M",
+    "values": [ { "value": "MAX_MANA", "multiply": 0.10 },{ "value": "REGEN_MANA", "multiply": 0.10 } ]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_7M",
+    "values": [ { "value": "MAX_MANA", "multiply": 0.15 },{ "value": "REGEN_MANA", "multiply": 0.10 } ]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_8M",
+    "values": [ { "value": "MAX_MANA", "multiply": 0.10 },{ "value": "REGEN_MANA", "multiply": 0.10 } ]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_9M",
+    "values": [ { "value": "MAX_MANA", "multiply": 0.10 },{ "value": "REGEN_MANA", "multiply": 0.10 } ]
+},
+{
+    "type": "enchantment",
+    "id": "WXSK_ME_Enchantment_10M",
+    "values": [ { "value": "MAX_MANA", "multiply": 0.25 },{ "value": "REGEN_MANA", "multiply": 0.25 } ]
+}
+
+]

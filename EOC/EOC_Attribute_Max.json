@@ -1,0 +1,73 @@
+[
+{
+    "type": "effect_on_condition",
+    "id": "EOC_Attribute_MaxValue",
+    "effect": 
+	{
+      "run_eocs":
+	  [
+	    "EOC_ME_strength_max",
+        "EOC_ME_dexterity_max",
+		"EOC_ME_intelligence_max",
+		"EOC_ME_perception_max"
+      ]
+    }
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_strength_max",
+	"condition": 
+	{
+	"and":
+	[
+	{ "compare_int": [{ "u_val": "strength_base" }, ">=", { "u_val": "dexterity_base" }]},
+	{ "compare_int": [{ "u_val": "strength_base" }, ">=", { "u_val": "intelligence_base" }]},
+	{ "compare_int": [{ "u_val": "strength_base" }, ">=", { "u_val": "perception_base" }]}
+	]
+	},
+    "effect": { "arithmetic": [{ "u_val": "var", "var_name": "attribute", "type": "max", "context": "最大属性值" }, "=", { "u_val": "strength_base" } ]}
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_dexterity_max",
+	"condition": 
+	{
+	"and":
+	[
+	{ "compare_int": [{ "u_val": "dexterity_base" }, ">=", { "u_val": "strength_base" }]},
+	{ "compare_int": [{ "u_val": "dexterity_base" }, ">=", { "u_val": "intelligence_base" }]},
+	{ "compare_int": [{ "u_val": "dexterity_base" }, ">=", { "u_val": "perception_base" }]}
+	]
+	},
+    "effect": { "arithmetic": [{ "u_val": "var", "var_name": "attribute", "type": "max", "context": "最大属性值" }, "=", { "u_val": "dexterity_base" } ]}
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_intelligence_max",
+	"condition": 
+	{
+	"and":
+	[
+	{ "compare_int": [{ "u_val": "intelligence_base" }, ">=", { "u_val": "strength_base" }]},
+	{ "compare_int": [{ "u_val": "intelligence_base" }, ">=", { "u_val": "dexterity_base" }]},
+	{ "compare_int": [{ "u_val": "intelligence_base" }, ">=", { "u_val": "perception_base" }]}
+	]
+	},
+    "effect": { "arithmetic": [{ "u_val": "var", "var_name": "attribute", "type": "max", "context": "最大属性值" }, "=", { "u_val": "intelligence_base" } ]}
+},
+{
+    "type": "effect_on_condition",
+    "id": "EOC_ME_perception_max",
+	"condition": 
+	{
+	"and":
+	[
+	{ "compare_int": [{ "u_val": "perception_base" }, ">=", { "u_val": "strength_base" }]},
+	{ "compare_int": [{ "u_val": "perception_base" }, ">=", { "u_val": "dexterity_base" }]},
+	{ "compare_int": [{ "u_val": "perception_base" }, ">=", { "u_val": "intelligence_base" }]}
+	]
+	},
+    "effect": { "arithmetic": [{ "u_val": "var", "var_name": "attribute", "type": "max", "context": "最大属性值" }, "=", { "u_val": "perception_base" } ]}
+}
+
+]
